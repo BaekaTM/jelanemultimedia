@@ -1,76 +1,248 @@
 <!DOCTYPE html>
-<html lang="fr">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jelane Multimédia</title>
-    <link rel="stylesheet" href="./styles.css">
-    <!-- Ajout de la police professionnelle (Roboto) -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-    </head>
-    <body>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jelane Multimédia</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #333;
+      --card: #fff;
+      --primary: #013161;
+      --footer-bg: #004080a9;
+      --shadow: #0001;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #eee;
+      --card: #1e1e1e;
+      --primary: #4dabf7;
+      --footer-bg: #0a0a0a;
+      --shadow: #00000088;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #logo {
+      max-height: 120px;
+      opacity: 0;
+      animation: logoZoom 1s ease forwards;
+    }
+
+    @keyframes logoZoom {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    section {
+      background-color: var(--card);
+      padding: 30px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 10px var(--shadow);
+      transition: background-color 0.3s;
+    }
+
+    section h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    #services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      width: 100%;
+    }
+
+    .service {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease, background-color 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .illustration {
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      width: 100%;
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    footer h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .infobas {
+      text-align: center;
+      font-size: 0.95rem;
+      margin: 8px 0;
+    }
+
+    @media (max-width: 600px) {
+      .illustration {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Emoji pour changer le thème -->
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌞</button>
+
+  <div class="container">
     <header>
-        <img src="./logo.png" alt="Logo Jelane Multimédia" id="logo">
+      <img src="./logo.png" alt="Logo Jelane Multimédia" id="logo" />
     </header>
 
     <section id="a-propos">
-        <h2>À Propos</h2>
-        <p>Jelane Multimédia est votre partenaire de confiance pour l'installation d'OS, le nettoyage d'ordinateurs, le montage de PC et la téléassistance. Nous sommes passionnés par l'informatique et déterminés à fournir un service de qualité à notre clientèle.</p>
+      <h2>À Propos</h2>
+      <p>Jelane Multimédia est votre partenaire de confiance pour <strong>l'installation d'OS</strong>, le <strong>nettoyage d'ordinateurs</strong>, le montage de PC et la téléassistance. Nous sommes passionnés par l'informatique et déterminés à fournir un service de <strong>qualité</strong> à notre clientèle.</p>
     </section>
 
-    <section id="services">
-        <h2>Nos Services</h2>
+    <section id="services-section">
+      <h2>Nos Services</h2>
+      <div id="services">
         <div class="service">
-            <img src="./illustration/os.jpg" alt="Installation OS" class="illustration">
-            <h3>Installation OS + MAJ + Drivers</h3>
+          <img src="./illustration/os.jpg" alt="Installation OS" class="illustration" />
+          <h3>Installation OS + MAJ + Drivers</h3>
+          <p>Windows : 59.99 €</p>
+          <p>MacOS : 39.99 €</p>
+          <p>Linux : 14.99 €</p>
+        </div>
+        <div class="service">
+          <img src="./illustration/repa.jpg" alt="Montage, Réparation" class="illustration" />
+          <h3>Montage, Réparation</h3>
+          <p>Diagnostic + devis réparation : 19.99 €</p>
+          <p>Remplacement composant : 14.99 € ou 34.99 €</p>
+          <p>Nettoyage PC + pâte thermique : 29.99 € ou 69.99 €</p>
+        </div>
+        <div class="service">
+          <img src="./illustration/assist.jpg" alt="Assistance" class="illustration" />
+          <h3>Assistance et Conseil</h3>
+          <p>Conseil config : 11.99 €</p>
+          <p>Téléassistance : 5.99 € / 15 min</p>
+        </div>
+        <div class="service">
+          <img src="./illustration/virus.jpg" alt="Dépannage logiciel" class="illustration" />
+          <h3>Dépannage Logiciel</h3>
+          <p>Désinfection système : 49.99 €</p>
+          <p>Récupération de données : 69.99 €</p>
+        </div>
+      </div>
+    </section>
 
-            <p>Windows : 59.99 €</p>
-            <p>MacOS : 39.99 €</p>
-            <p>Linux : 14.99 €</p>
-        </div>
-        <div class="service">
-            <img src="./illustration/repa.jpg" alt="Montage, Réparation" class="illustration">
-            <h3>Montage, Réparation</h3>
-            <p>Diagnostic + devis réparation : 19.99 €</p>
-            <p>Remplacement composant : 14.99 € ou 34.99 €</p>
-            <p>Nettoyage PC + changement pâte thermique : 29.99 € ou 69.99 € (PC portable)</p>
-        </div>
-        <div class="service">
-            <img src="./illustration/assist.jpg" alt="Conseil Configuration et Assistance" class="illustration">
-            <h3>Conseil Configuration et Assistance</h3>
-            <p>Conseil config TTC : 11.99 €</p>
-            <p>Assistance et téléassistance : 5.99 € (/15min) ou 15.99 € (/heure)</p>
-        </div>
-        <div class="service">
-            <img src="./illustration/virus.jpg" alt="Dépannage Logiciel" class="illustration">
-            <h3>Dépannage Logiciel</h3>
-            <p>Désinfection système : 49.99 €</p>
-            <p>Récupération de données : 69.99 €</p>
-        </div>
-        <p class="infobas">Frais de déplacement sur Brest : 5.99 €</p>
-        <p class="infobas">Minimum CB : 10 €</p>
-        <p class="infobas">Dépôt dans une structure partenaire : Offert</p>
+    <section>
+      <h2>Informations Supplémentaires</h2>
+      <p class="infobas">Frais de déplacement sur Brest : 5.99 €</p>
+      <p class="infobas">Minimum CB : 10 €</p>
+      <p class="infobas">Dépôt dans une structure partenaire : Offert</p>
     </section>
 
     <section id="avantages">
-        <h2>Pourquoi Nous Choisir ?</h2>
-        <strong>Expertise :</strong>
-        <p>Le travail et l'expertise d'un passionné.</p>
-        <strong>Approche Personnalisée :</strong>
-        <p>Nous traitons chaque demande avec soin et convivialité, assurant une expérience client exceptionnelle à chaque interaction.</p>
-        <strong>Facturé si Satisfait :</strong> 
-        <p>La satisfaction de nos clients est notre priorité absolue. Nous nous engageons à offrir un travail propre et nous ne facturons seulement si votre problème a été réglé.</p>
+      <h2>Pourquoi Nous Choisir ?</h2>
+      <p><strong>Expertise :</strong> Le travail d'un passionné.</p>
+      <p><strong>Approche personnalisée :</strong> Chaque client est unique, chaque besoin est étudié avec attention.</p>
+      <p><strong>Facturé si satisfait :</strong> Nous ne facturons que si le problème est réellement résolu.</p>
     </section>
 
     <footer>
-        <h2>Contact</h2>
-        <p>Téléphone : 07 58 82 78 56</p>
-        <p>Email : <a href="mailto:jelanemultimedia@gmail.com">jelanemultimedia@gmail.com</a></p>
-        <p>Adresse : 42 rue du Guilvinec, 29200 Brest</p>
-        <p>Entreprise d'aide en ligne et à domicile, aucun local</p>
-        <p>SIREN : En cours d'attribution</p>
-        <a href="./conditions_generales.pdf" target="_blank">Conditions générales de vente</a>
-        <p>&copy; 2025 Jelane Multimédia</p>
+      <a href="tel:0758827856">07 58 82 78 56</a>
+      <p><a href="mailto:jelanemultimedia@gmail.com">jelanemultimedia@gmail.com</a></p>
+      <p>42 rue du Guilvinec, 29200 Brest</p>
+      <p>Aucun local – Service à domicile et à distance</p>
+      <p>SIRET : En cours d'attribution</p>
+      <p><a href="./conditions_generales.pdf" target="_blank">Conditions générales de vente</a></p>
+      <p>&copy; 2025 Jelane Multimédia</p>
     </footer>
-    </body>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateIcon(newTheme);
+    }
+
+    function updateIcon(theme) {
+      const icon = document.getElementById('themeIcon');
+      icon.textContent = theme === 'dark' ? '🌙' : '🌞';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateIcon(savedTheme);
+    });
+  </script>
+</body>
 </html>
