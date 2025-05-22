@@ -153,6 +153,30 @@
         height: 100px;
       }
     }
+    .button-appel {
+      background: var(--primary);
+      border-radius: 999px;
+      box-shadow: var(--primary) 0 10px 20px -10px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 24px;
+      opacity: 1;
+      outline: 0 solid transparent;
+      padding: 8px 18px;
+      margin: 10px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: fit-content;
+      word-break: break-word;
+      border: 0;
+    }
+    .button-appel-link {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -175,47 +199,51 @@
         <div class="service">
           <img src="./illustration/os.jpg" alt="Installation OS" class="illustration" />
           <h3>Installation OS + MAJ + Drivers</h3>
-          <p>Windows : 59.99 €</p>
-          <p>MacOS : 39.99 €</p>
-          <p>Linux : 14.99 €</p>
+          <p>Windows : <strong>59.99 €</strong></p>
+          <p>MacOS : <strong>39.99 €</strong></p>
+          <p>Linux : <strong>14.99 €</strong></p>
+          <button class="button-appel" role="button"><a href="tel:0758827856" class="button-appel-link">Nous appeler</a></button>
         </div>
         <div class="service">
           <img src="./illustration/repa.jpg" alt="Montage, Réparation" class="illustration" />
           <h3>Montage, Réparation</h3>
-          <p>Diagnostic + devis réparation : 19.99 €</p>
-          <p>Montage PC : 39.99 €</p>
-          <p>Remplacement composant : 14.99 € ou 34.99 €</p>
-          <p>Nettoyage PC + pâte thermique : 29.99 € ou 69.99 €</p>
+          <p>Diagnostic + devis réparation : <strong>19.99 €</strong></p>
+          <p>Montage PC : <strong>39.99 €</strong></p>
+          <p>Remplacement composant : <strong>14.99 €</strong> ou <strong>34.99 €</strong></p>
+          <p>Nettoyage PC + pâte thermique : <strong>29.99 €</strong> ou <strong>69.99 €</strong></p>
+          <button class="button-appel" role="button"><a href="tel:0758827856" class="button-appel-link">Nous appeler</a></button>
         </div>
         <div class="service">
           <img src="./illustration/assist.jpg" alt="Assistance" class="illustration" />
           <h3>Assistance et Conseil</h3>
-          <p>Conseil config : 11.99 €</p>
-          <p>Téléassistance : 5.99 € / 20 min</p>
-          <p>Téléconseil (aucun acte à distance) : Offert</p>
+          <p>Conseil config : <strong>11.99 €</strong></p>
+          <p>Téléassistance : <strong>5.99 €</strong> / 20 min</p>
+          <p>Téléconseil (aucun acte à distance) : <strong>Offert</strong></p>
+          <button class="button-appel" role="button"><a href="tel:0758827856" class="button-appel-link">Nous appeler</a></button>
         </div>
         <div class="service">
           <img src="./illustration/virus.jpg" alt="Dépannage logiciel" class="illustration" />
           <h3>Dépannage Logiciel</h3>
-          <p>Désinfection système : 49.99 €</p>
-          <p>Récupération de données : 69.99 €</p>
+          <p>Désinfection système : <strong>49.99 €</strong></p>
+          <p>Récupération de données : <strong>69.99 €</strong></p>
+          <button class="button-appel" role="button"><a href="tel:0758827856" class="button-appel-link">Nous appeler</a></button>
         </div>
         <div class="service">
           <img src="./illustration/achat.jpg" alt="Achat pc" class="illustration" />
           <h3>Achat PC</h3>
           <p>Nous vous proposons un service d'achat de PC sur mesure.</p>
           <p>Nous vous conseillons sur le choix de votre matériel.</p>
-          <p>Prix : sur devis</p>
-          <a href="tel:0758827856">Nous appeller</a>
+          <p>Prix : <strong>sur devis</strong></p>
+          <button class="button-appel" role="button"><a href="tel:0758827856" class="button-appel-link">Nous appeler</a></button>
         </div>
       </div>
     </section>
 
     <section>
       <h2>Informations Supplémentaires</h2>
-      <p class="infobas">Frais de déplacement sur Brest : 5.99 €</p>
-      <p class="infobas">Dépôt dans une structure partenaire : Offert</p>
-      <p class="infobas">Minimum CB : 10 €</p>
+      <p class="infobas">Frais de déplacement sur Brest : <strong>5.99 €</strong></p>
+      <p class="infobas">Dépôt dans une structure partenaire : <strong>Offert</strong></p>
+      <p class="infobas">Minimum CB : <strong>10 €</strong></p>
       <p class="infobas"><strong>Exclu : -15% sur les 10 premières prestations (hors frais de déplacement).</strong></p>
     </section>
 
