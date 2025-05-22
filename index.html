@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2998914403804541" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles.css" />
-    <script src="./main.js"></script>
   </head>
   <body>
     <!-- Emoji pour changer le thème -->
@@ -111,6 +110,25 @@
       </footer>
     </div>
     <script>
+      function toggleTheme() {
+          const html = document.documentElement;
+          const current = html.getAttribute('data-theme');
+          const newTheme = current === 'dark' ? 'light' : 'dark';
+          html.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          updateIcon(newTheme);
+      }
+
+      function updateIcon(theme) {
+          const icon = document.getElementById('themeIcon');
+          icon.textContent = theme === 'dark' ? '🌙' : '🌞';
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+          const savedTheme = localStorage.getItem('theme') || 'light';
+          document.documentElement.setAttribute('data-theme', savedTheme);
+          updateIcon(savedTheme);
+      });
         // Chargement des images nommées "photo1.jpg" à "photo10.jpg" par exemple
       const container = document.querySelector('.galerie-photos');
       const totalImages = 6; // Modifie ce nombre selon ce que tu as
