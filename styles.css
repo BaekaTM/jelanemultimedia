@@ -90,7 +90,6 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
-    
 }
 
 .service {
@@ -138,11 +137,6 @@ footer a {
     margin: 8px 0;
 }
 
-@media (max-width: 600px) {
-    .illustration {
-    height: 100px;
-    }
-}
 .button-appel {
     background: var(--primary);
     border-radius: 999px;
@@ -164,9 +158,10 @@ footer a {
     border: 0;
 }
 .button-appel-link {
-    color: #FFFFFF;
+    color: #363333;
     text-decoration: none;
 }
+
 #galerie {
     text-align: center;
 }
@@ -189,4 +184,9 @@ footer a {
 
 .galerie-photos img:hover {
     transform: scale(1.05);
+}
+
+#appeler_principal {
+    text-align: center;
+    margin-top: 10px;
 }
